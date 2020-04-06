@@ -10,9 +10,9 @@ A happy little svelte theme switcher to brighten or maybe darken your day 🌞.
 
 App.svelte
 
-```javascript
+```html
 <script>
-import ThemeSwitcher from "svelte-theme-switcher";
+  import ThemeSwitcher from "svelte-theme-switcher";
 </script>
 
 <style>
@@ -32,7 +32,7 @@ import ThemeSwitcher from "svelte-theme-switcher";
   }
 </style>
 
-<ThemeSwitcher/>
+<ThemeSwitcher />
 ```
 
 ## Installation
