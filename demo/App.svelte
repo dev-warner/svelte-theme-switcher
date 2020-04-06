@@ -41,10 +41,6 @@
     margin-left: 8px;
   }
 
-  .copy {
-    cursor: pointer;
-  }
-
   code {
     width: 100%;
     word-break: break-word;

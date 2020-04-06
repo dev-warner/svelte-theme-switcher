@@ -1,6 +1,6 @@
 # Svelte Theme Switcher
 
-![CI](https://github.com/dev-warner/svelte-theme-switcher/workflows/Node.js%20CI/badge.svg)
+![Test](https://github.com/dev-warner/svelte-theme-switcher/workflows/Test/badge.svg)
 
 A happy little svelte theme switcher to brighten or maybe darken your day 🌞.
 
