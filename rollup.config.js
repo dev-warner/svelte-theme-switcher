@@ -23,7 +23,7 @@ export default [
     plugins: [svelte(), terser(), resolve()]
   },
   {
-    input: "docs/main.js",
+    input: "demo/main.js",
     output: {
       sourcemap: true,
       format: "iife",

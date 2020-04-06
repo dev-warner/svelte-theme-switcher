@@ -12,10 +12,13 @@ export const MATCH_DARK_THEME = "(prefers-color-scheme: dark)";
 export const IS_USER_PREFERNCE_DARK =
   window.matchMedia && window.matchMedia(MATCH_DARK_THEME).matches;
 
-export const DEFAULT_THEME =
-  localStorage.getItem(LOCAL_STORAGE_KEY) || IS_USER_PREFERNCE_DARK
-    ? THEMES.DARK
-    : THEMES.LIGHT;
+export const STORED = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+export const DEFAULT_THEME = STORED
+  ? STORED
+  : IS_USER_PREFERNCE_DARK
+  ? THEMES.DARK
+  : THEMES.LIGHT;
 
 export const theme = writable(DEFAULT_THEME);
 

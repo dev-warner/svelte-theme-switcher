@@ -2,7 +2,7 @@
 
 A happy little svelte theme switcher to brighten or maybe darken your day 🌞.
 
-- [documentation]()
+- [demo]()
 
 ## Basic example
 
@@ -14,29 +14,23 @@ import ThemeSwitcher from "svelte-theme-switcher";
 </script>
 
 <style>
+  :global(body) {
+    background: var(--background);
+    color: var(--text);
+    transition: 0.6s;
+  }
 
+  :global(.theme-light) {
+    --background: rgb(250, 252, 240);
+    --text: #222;
+  }
+  :global(.theme-dark) {
+    --background: #222;
+    --text: #fff;
+  }
 </style>
 
 <ThemeSwitcher/>
-```
-
-app.css
-
-```css
-body {
-  background: var(--background);
-  color: var(--text);
-  transition: color background-color 0.6s;
-}
-
-.theme-light {
-  --background: #fff;
-  --text: #222;
-}
-.theme-dark {
-  --background: #222;
-  --text: #fff;
-}
 ```
 
 ## Installation
