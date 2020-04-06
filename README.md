@@ -4,7 +4,7 @@
 
 A happy little svelte theme switcher to brighten or maybe darken your day 🌞.
 
-- [demo]()
+- [demo](https://dev-warner.github.io/svelte-theme-switcher/)
 
 ## Basic example
 
