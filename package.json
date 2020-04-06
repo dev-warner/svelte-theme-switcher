@@ -1,4 +1,5 @@
 {
+  "version": "0.0.1",
   "name": "svelte-theme-switcher",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
