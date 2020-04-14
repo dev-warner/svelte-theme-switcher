@@ -1,4 +1,5 @@
 <script>
+  import "../dist/wc";
   import ThemeSwitcher, { theme } from "../src";
 </script>
 

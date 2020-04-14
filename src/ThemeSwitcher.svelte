@@ -2,8 +2,8 @@
   import { setStyles, DEFAULT_OPTIONS } from "./core/utils";
   import { theme, THEMES, toggleTheme } from "./core/theme";
 
-  import Sun from "./icons/Sun.svelte";
-  import Moon from "./icons/Moon.svelte";
+  import Sun from "./icons/sun.svg";
+  import Moon from "./icons/moon.svg";
 
   export let options = DEFAULT_OPTIONS;
 
@@ -83,6 +83,8 @@
   }
 </style>
 
+<svelte:options tag="theme-switcher" />
+
 <button
   class="theme-switcher {classes.join(' ')}"
   aria-label="Switch theme"
@@ -90,9 +92,9 @@
   {style}>
   <span class="theme-switcher__state">
     {#if isDarkMode}
-      <Moon {size} />
+      <Moon width={size} height={size} />
     {:else}
-      <Sun {size} />
+      <Sun width={size} height={size} />
     {/if}
   </span>
 </button>

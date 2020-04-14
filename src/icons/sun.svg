@@ -1,13 +1,9 @@
-<script>
-  import Svg from "./Svg.svelte";
-
-  export let size = 30;
-</script>
-
-<Svg {size} title="Light theme on: Sun">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <title>Light theme on: Sun</title>
   <path
     fill="#FFD983"
-    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18" />
+    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"
+  />
   <g fill="#FFCC4D">
     <circle cx="9.5" cy="7.5" r="3.5" />
     <circle cx="24.5" cy="28.5" r="3.5" />
@@ -23,5 +19,6 @@
     9-4.477c0-1.237-2 1.381-9 1.381M27 15c0 1.657-1.344 3-3 3s-3-1.343-3-3
     1.344-3 3-3 3 1.343 3 3m-12 0c0 1.657-1.344 3-3 3s-3-1.343-3-3 1.344-3 3-3 3
     1.343 3 3"
-    fill="#292F33" />
-</Svg>
+    fill="#292F33"
+  />
+</svg>
