@@ -26,7 +26,7 @@ export default [
   },
   {
     input: "src/index.js",
-    output: [{ file: pkg.web, format: "es", exports: "named" }],
+    output: [{ file: pkg.web, format: "umd", name, exports: "named" }],
     plugins: [
       svelte({ customElement: true }),
       terser(),
