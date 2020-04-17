@@ -10,7 +10,9 @@ export const THEMES = {
 export const MATCH_DARK_THEME = "(prefers-color-scheme: dark)";
 
 export const IS_USER_PREFERNCE_DARK =
-  window.matchMedia && window.matchMedia(MATCH_DARK_THEME).matches;
+  typeof window !== "undefined" &&
+  window.matchMedia &&
+  window.matchMedia(MATCH_DARK_THEME).matches;
 
 export const STORED = localStorage.getItem(LOCAL_STORAGE_KEY);
 
