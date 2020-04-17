@@ -14,7 +14,8 @@ export const IS_USER_PREFERNCE_DARK =
   window.matchMedia &&
   window.matchMedia(MATCH_DARK_THEME).matches;
 
-export const STORED = localStorage.getItem(LOCAL_STORAGE_KEY);
+export const STORED =
+  typeof window !== "undefined" && localStorage.getItem(LOCAL_STORAGE_KEY);
 
 export const DEFAULT_THEME = STORED
   ? STORED
