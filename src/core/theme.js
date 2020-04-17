@@ -4,7 +4,7 @@ export const LOCAL_STORAGE_KEY = "current:theme";
 
 export const THEMES = {
   DARK: "dark",
-  LIGHT: "light"
+  LIGHT: "light",
 };
 
 export const MATCH_DARK_THEME = "(prefers-color-scheme: dark)";
@@ -23,7 +23,7 @@ export const DEFAULT_THEME = STORED
 export const theme = writable(DEFAULT_THEME);
 
 export function toggleTheme() {
-  theme.update(current =>
+  theme.update((current) =>
     current === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK
   );
 }
@@ -34,15 +34,17 @@ export function onSystemThemeChange(e) {
   theme.set(newTheme);
 }
 
-window.matchMedia &&
-  window
-    .matchMedia(MATCH_DARK_THEME)
-    .addEventListener("change", onSystemThemeChange, true);
+if (typeof window !== "undefined") {
+  window.matchMedia &&
+    window
+      .matchMedia(MATCH_DARK_THEME)
+      .addEventListener("change", onSystemThemeChange, true);
 
-theme.subscribe(theme => {
-  document.body.classList.remove(
-    `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
-  );
-  document.body.classList.add(`theme-${theme}`);
-  localStorage.setItem(LOCAL_STORAGE_KEY, theme);
-});
+  theme.subscribe((theme) => {
+    document.body.classList.remove(
+      `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
+    );
+    document.body.classList.add(`theme-${theme}`);
+    localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+  });
+}
