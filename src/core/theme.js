@@ -39,9 +39,7 @@ export function onSystemThemeChange(e) {
 
 if (typeof window !== "undefined") {
   window.matchMedia &&
-    window
-      .matchMedia(MATCH_DARK_THEME)
-      .addEventListener("change", onSystemThemeChange, true);
+    window.matchMedia(MATCH_DARK_THEME).addListener(onSystemThemeChange);
 
   theme.subscribe((theme) => {
     document.body.classList.remove(
