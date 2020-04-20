@@ -1,5 +1,4 @@
 <script>
-  import "../dist/wc";
   import ThemeSwitcher, { theme } from "../src";
 </script>
 
@@ -24,7 +23,9 @@
     width: 100%;
     margin: 8px auto;
   }
-
+  a {
+    color: #c69;
+  }
   .header {
     display: flex;
   }
@@ -100,6 +101,10 @@
     <li>Selection gets persisted</li>
     <li>Theme reacts to user preferences</li>
     <li>You get a lovely happy switch button</li>
+    <li>
+      Can be used as a web component
+      <a href="/web-components">demo here</a>
+    </li>
   </ul>
 
   <p>

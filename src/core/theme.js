@@ -45,12 +45,10 @@ function onChange(theme) {
   localStorage.setItem(LOCAL_STORAGE_KEY, theme);
 }
 
-function onLoad(theme) {
-  document.addEventListener("load", function listener() {
-    onChange(theme);
-    document.removeEventListener("load", listener);
-  });
-}
+document.addEventListener("DOMContentLoaded", function listener() {
+  onChange(DEFAULT_THEME);
+  document.removeEventListener("DOMContentLoaded", listener);
+});
 
 if (typeof window !== "undefined") {
   window.matchMedia &&
@@ -61,6 +59,8 @@ if (typeof window !== "undefined") {
       document.readyState == "complete" ||
       document.readyState === "interactive";
 
-    ready ? onChange(theme) : onLoad(theme);
+    if (ready) {
+      onChange(theme);
+    }
   });
 }

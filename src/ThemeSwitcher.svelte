@@ -29,7 +29,7 @@
 </script>
 
 <style>
-  :global(:root) {
+  :root {
     --theme-switcher-background-light: #ecf0f1;
     --theme-switcher-background-dark: #333;
     --theme-switcher-transition: 0.6s;
@@ -41,6 +41,15 @@
   }
 
   .theme-switcher {
+    --theme-switcher-background-light: #ecf0f1;
+    --theme-switcher-background-dark: #333;
+    --theme-switcher-transition: 0.6s;
+    --theme-switcher-height: 30px;
+    --theme-switcher-width: 60px;
+
+    --theme-switcher-border-radius: calc(var(--theme-switcher-width) / 2);
+    --theme-switcher-offset: calc(var(--theme-switcher-height) / 30);
+
     border: 0;
     overflow: hidden;
     position: relative;

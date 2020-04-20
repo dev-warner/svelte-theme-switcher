@@ -1,3 +1,4 @@
+import copy from "rollup-plugin-copy";
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -56,6 +57,14 @@ export default [
       }),
       commonjs(),
       svelteSVG(),
+      copy({
+        targets: [
+          {
+            src: "demo/web-components/index.html",
+            dest: "public/web-components",
+          },
+        ],
+      }),
 
       !production && serve(),
       !production && livereload("public"),

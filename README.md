@@ -64,8 +64,8 @@ yarn add svelte-theme-switcher
     transition: "0.6s",
     background: {
       light: "#ecf0f1",
-      dark: "#333"
-    }
+      dark: "#333",
+    },
   }}
 />
 ```
@@ -78,4 +78,36 @@ import { theme } from "svelte-theme-switcher";
 </script>
 
 <h1>{$theme}</h1>
+```
+
+## Web Components
+
+In the head of your document add:
+
+```html
+<script src="https://unpkg.com/svelte-theme-switcher@0.0.10/dist/wc/index.js" />
+<style>
+  body {
+    background: var(--background);
+    color: var(--text);
+    transition: 0.6s;
+  }
+
+  .theme-light {
+    --background: rgb(250, 252, 240);
+    --text: #222;
+  }
+  .theme-dark {
+    --background: #222;
+    --text: #fff;
+  }
+</style>
+```
+
+this ensure's there is no inital flicker
+
+You can now add the web component to switch between themes.
+
+```html
+<theme-switcher></theme-switcher>
 ```
