@@ -37,15 +37,30 @@ export function onSystemThemeChange(e) {
   theme.set(newTheme);
 }
 
+function onChange(theme) {
+  document.body.classList.remove(
+    `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
+  );
+  document.body.classList.add(`theme-${theme}`);
+  localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+}
+
+function onLoad(theme) {
+  document.addEventListener("load", function listener() {
+    onChange(theme);
+    document.removeEventListener("load", listener);
+  });
+}
+
 if (typeof window !== "undefined") {
   window.matchMedia &&
     window.matchMedia(MATCH_DARK_THEME).addListener(onSystemThemeChange);
 
   theme.subscribe((theme) => {
-    document.body.classList.remove(
-      `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
-    );
-    document.body.classList.add(`theme-${theme}`);
-    localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+    const ready =
+      document.readyState == "complete" ||
+      document.readyState === "interactive";
+
+    ready ? onChange(theme) : onLoad(theme);
   });
 }
