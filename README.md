@@ -85,7 +85,7 @@ import { theme } from "svelte-theme-switcher";
 In the head of your document add:
 
 ```html
-<script src="https://unpkg.com/svelte-theme-switcher@0.0.10/dist/wc/index.js" />
+<script src="https://unpkg.com/svelte-theme-switcher@0.0.11/dist/wc/index.js" />
 <style>
   body {
     background: var(--background);

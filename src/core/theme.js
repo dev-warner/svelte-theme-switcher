@@ -23,6 +23,8 @@ export const DEFAULT_THEME = STORED
   ? THEMES.DARK
   : THEMES.LIGHT;
 
+onChange(DEFAULT_THEME);
+
 export const theme = writable(DEFAULT_THEME);
 
 export function toggleTheme() {
@@ -38,29 +40,18 @@ export function onSystemThemeChange(e) {
 }
 
 function onChange(theme) {
-  document.body.classList.remove(
+  document.documentElement.classList.remove(
     `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
   );
-  document.body.classList.add(`theme-${theme}`);
+  document.documentElement.classList.add(`theme-${theme}`);
   localStorage.setItem(LOCAL_STORAGE_KEY, theme);
 }
-
-document.addEventListener("DOMContentLoaded", function listener() {
-  onChange(DEFAULT_THEME);
-  document.removeEventListener("DOMContentLoaded", listener);
-});
 
 if (typeof window !== "undefined") {
   window.matchMedia &&
     window.matchMedia(MATCH_DARK_THEME).addListener(onSystemThemeChange);
 
   theme.subscribe((theme) => {
-    const ready =
-      document.readyState == "complete" ||
-      document.readyState === "interactive";
-
-    if (ready) {
-      onChange(theme);
-    }
+    onChange(theme);
   });
 }
