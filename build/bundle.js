@@ -448,22 +448,6 @@ var app = (function () {
         $inject_state() { }
     }
 
-    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-    function unwrapExports (x) {
-    	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-    }
-
-    function createCommonjsModule(fn, module) {
-    	return module = { exports: {} }, fn(module, module.exports), module.exports;
-    }
-
-    var wc = createCommonjsModule(function (module, exports) {
-    !function(t,e){e(exports);}(commonjsGlobal,(function(t){function e(){}function c(t,e){for(const c in e)t[c]=e[c];return t}function r(t){return t()}function n(){return Object.create(null)}function i(t){t.forEach(r);}function o(t){return "function"==typeof t}function s(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function l(t,c,r){t.$$.on_destroy.push(function(t,...c){if(null==t)return e;const r=t.subscribe(...c);return r.unsubscribe?()=>r.unsubscribe():r}(c,r));}function h(t){const e={};for(const c in t)"$"!==c[0]&&(e[c]=t[c]);return e}function a(t,e){t.appendChild(e);}function f(t,e,c){t.insertBefore(e,c||null);}function u(t){t.parentNode.removeChild(t);}function d(t){return document.createElement(t)}function m(t){return document.createElementNS("http://www.w3.org/2000/svg",t)}function p(t){return document.createTextNode(t)}function g(t,e,c){null==c?t.removeAttribute(e):t.getAttribute(e)!==c&&t.setAttribute(e,c);}function w(t,e){for(const c in e)g(t,c,e[c]);}function $(t){return Array.from(t.childNodes)}function y(t,e,c,r){for(let r=0;r<t.length;r+=1){const n=t[r];if(n.nodeName===e){let e=0;for(;e<n.attributes.length;){const t=n.attributes[e];c[t.name]?e++:n.removeAttribute(t.name);}return t.splice(r,1)[0]}}return r?m(e):d(e)}function x(t,e){for(let c=0;c<t.length;c+=1){const r=t[c];if(3===r.nodeType)return r.data=""+e,t.splice(c,1)[0]}return p(e)}let b;function v(t){b=t;}const E=[],_=[],k=[],B=[],M=Promise.resolve();let C=!1;function L(t){k.push(t);}let F=!1;const S=new Set;function j(){if(!F){F=!0;do{for(let t=0;t<E.length;t+=1){const e=E[t];v(e),D(e.$$);}for(E.length=0;_.length;)_.pop()();for(let t=0;t<k.length;t+=1){const e=k[t];S.has(e)||(S.add(e),e());}k.length=0;}while(E.length);for(;B.length;)B.pop()();C=!1,F=!1,S.clear();}}function D(t){if(null!==t.fragment){t.update(),i(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(L);}}const A=new Set;let N,O;function T(t,e){t&&t.i&&(A.delete(t),t.i(e));}function H(t,e,c,r){if(t&&t.o){if(A.has(t))return;A.add(t),N.c.push(()=>{A.delete(t),r&&(c&&t.d(1),r());}),t.o(e);}}function z(t,e){const c={},r={},n={$$scope:1};let i=t.length;for(;i--;){const o=t[i],s=e[i];if(s){for(const t in o)t in s||(r[t]=1);for(const t in s)n[t]||(c[t]=s[t],n[t]=1);t[i]=s;}else for(const t in o)n[t]=1;}for(const t in r)t in c||(c[t]=void 0);return c}function I(t){t&&t.c();}function P(t,e,c){const{fragment:n,on_mount:s,on_destroy:l,after_update:h}=t.$$;n&&n.m(e,c),L(()=>{const e=s.map(r).filter(o);l?l.push(...e):i(e),t.$$.on_mount=[];}),h.forEach(L);}function R(t,e){const c=t.$$;null!==c.fragment&&(i(c.on_destroy),c.fragment&&c.fragment.d(e),c.on_destroy=c.fragment=null,c.ctx=[]);}function q(t,e){-1===t.$$.dirty[0]&&(E.push(t),C||(C=!0,M.then(j)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31;}function G(t,c,r,o,s,l,h=[-1]){const a=b;v(t);const f=c.props||{},d=t.$$={fragment:null,ctx:null,props:l,update:e,not_equal:s,bound:n(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(a?a.$$.context:[]),callbacks:n(),dirty:h};let m=!1;if(d.ctx=r?r(t,f,(e,c,...r)=>{const n=r.length?r[0]:c;return d.ctx&&s(d.ctx[e],d.ctx[e]=n)&&(d.bound[e]&&d.bound[e](n),m&&q(t,e)),c}):[],d.update(),m=!0,i(d.before_update),d.fragment=!!o&&o(d.ctx),c.target){if(c.hydrate){const t=$(c.target);d.fragment&&d.fragment.l(t),t.forEach(u);}else d.fragment&&d.fragment.c();c.intro&&T(t.$$.fragment),P(t,c.target,c.anchor),j();}v(a);}"function"==typeof HTMLElement&&(O=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"});}connectedCallback(){for(const t in this.$$.slotted)this.appendChild(this.$$.slotted[t]);}attributeChangedCallback(t,e,c){this[t]=c;}$destroy(){R(this,1),this.$destroy=e;}$on(t,e){const c=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return c.push(e),()=>{const t=c.indexOf(e);-1!==t&&c.splice(t,1);}}$set(){}});class J{$destroy(){R(this,1),this.$destroy=e;}$on(t,e){const c=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return c.push(e),()=>{const t=c.indexOf(e);-1!==t&&c.splice(t,1);}}$set(){}}const K={classList:[],height:"30px"},Q=["background","light","dark","height","width","transition"];function U(t){const{classList:e,...c}=t;return function t(e,c=""){return Object.keys(e).map(r=>{if(!Q.includes(r))return;const n=e[r];return "object"==typeof n?t(n,c?`${c}-${r}`:r):`--theme-switcher-${c?`${c}-`:""}${r}: ${n};`}).flat().filter(Boolean).join(" ")}(c)}const V=[];const W="dark",X="light",Y=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,Z=localStorage.getItem("current:theme"),tt=function(t,c=e){let r;const n=[];function i(e){if(s(t,e)&&(t=e,r)){const e=!V.length;for(let e=0;e<n.length;e+=1){const c=n[e];c[1](),V.push(c,t);}if(e){for(let t=0;t<V.length;t+=2)V[t][0](V[t+1]);V.length=0;}}}return {set:i,update:function(e){i(e(t));},subscribe:function(o,s=e){const l=[o,s];return n.push(l),1===n.length&&(r=c(i)||e),o(t),()=>{const t=n.indexOf(l);-1!==t&&n.splice(t,1),0===n.length&&(r(),r=null);}}}}(Z||(Y?W:X));function et(){tt.update(t=>t===W?X:W);}function ct(t){let r,n,i,o,s,l,h,d,b,v,E,_,k,B,M=[{xmlns:"http://www.w3.org/2000/svg"},{viewBox:"0 0 36 36"},t[0]],C={};for(let t=0;t<M.length;t+=1)C=c(C,M[t]);return {c(){r=m("svg"),n=m("title"),i=p("Light theme on: Sun"),o=m("path"),s=m("g"),l=m("circle"),h=m("circle"),d=m("circle"),b=m("circle"),v=m("circle"),E=m("circle"),_=m("circle"),k=m("circle"),B=m("path"),this.h();},l(t){r=y(t,"svg",{xmlns:!0,viewBox:!0},1);var e=$(r);n=y(e,"title",{},1);var c=$(n);i=x(c,"Light theme on: Sun"),c.forEach(u),o=y(e,"path",{fill:!0,d:!0},1),$(o).forEach(u),s=y(e,"g",{fill:!0},1);var a=$(s);l=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(l).forEach(u),h=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(h).forEach(u),d=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(d).forEach(u),b=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(b).forEach(u),v=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(v).forEach(u),E=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(E).forEach(u),_=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(_).forEach(u),k=y(a,"circle",{cx:!0,cy:!0,r:!0},1),$(k).forEach(u),a.forEach(u),B=y(e,"path",{d:!0,fill:!0},1),$(B).forEach(u),e.forEach(u),this.h();},h(){g(o,"fill","#FFD983"),g(o,"d","M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"),g(l,"cx","9.5"),g(l,"cy","7.5"),g(l,"r","3.5"),g(h,"cx","24.5"),g(h,"cy","28.5"),g(h,"r","3.5"),g(d,"cx","22"),g(d,"cy","5"),g(d,"r","2"),g(b,"cx","3"),g(b,"cy","18"),g(b,"r","1"),g(v,"cx","30"),g(v,"cy","9"),g(v,"r","1"),g(E,"cx","16"),g(E,"cy","31"),g(E,"r","1"),g(_,"cx","32"),g(_,"cy","19"),g(_,"r","2"),g(k,"cx","6"),g(k,"cy","26"),g(k,"r","2"),g(s,"fill","#FFCC4D"),g(B,"d","M18 24.904c-7 0-9-2.618-9-1.381C9 24.762 13 28 18 28s9-3.238\n    9-4.477c0-1.237-2 1.381-9 1.381M27 15c0 1.657-1.344 3-3 3s-3-1.343-3-3\n    1.344-3 3-3 3 1.343 3 3m-12 0c0 1.657-1.344 3-3 3s-3-1.343-3-3 1.344-3 3-3 3\n    1.343 3 3"),g(B,"fill","#292F33"),w(r,C);},m(t,e){f(t,r,e),a(r,n),a(n,i),a(r,o),a(r,s),a(s,l),a(s,h),a(s,d),a(s,b),a(s,v),a(s,E),a(s,_),a(s,k),a(r,B);},p(t,[e]){w(r,z(M,[{xmlns:"http://www.w3.org/2000/svg"},{viewBox:"0 0 36 36"},1&e&&t[0]]));},i:e,o:e,d(t){t&&u(r);}}}function rt(t,e,r){return t.$set=t=>{r(0,e=c(c({},e),h(t)));},[e=h(e)]}"undefined"!=typeof window&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",(function(t){const e=t.matches?W:X;tt.set(e);}),!0),tt.subscribe(t=>{document.body.classList.remove(`theme-${t===W?X:W}`),document.body.classList.add(`theme-${t}`),localStorage.setItem("current:theme",t);}));class nt extends J{constructor(t){super(),G(this,t,rt,ct,s,{});}}function it(t){let r,n,i,o,s,l,h,d,b,v,E,_,k,B,M=[{xmlns:"http://www.w3.org/2000/svg"},{viewBox:"0 0 36 36"},t[0]],C={};for(let t=0;t<M.length;t+=1)C=c(C,M[t]);return {c(){r=m("svg"),n=m("title"),i=p("Dark theme on: Moon"),o=m("circle"),s=m("path"),l=m("circle"),h=m("circle"),d=m("circle"),b=m("circle"),v=m("circle"),E=m("circle"),_=m("circle"),k=m("circle"),B=m("circle"),this.h();},l(t){r=y(t,"svg",{xmlns:!0,viewBox:!0},1);var e=$(r);n=y(e,"title",{},1);var c=$(n);i=x(c,"Dark theme on: Moon"),c.forEach(u),o=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(o).forEach(u),s=y(e,"path",{fill:!0,d:!0},1),$(s).forEach(u),l=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(l).forEach(u),h=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(h).forEach(u),d=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(d).forEach(u),b=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(b).forEach(u),v=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(v).forEach(u),E=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(E).forEach(u),_=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(_).forEach(u),k=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(k).forEach(u),B=y(e,"circle",{fill:!0,cx:!0,cy:!0,r:!0},1),$(B).forEach(u),e.forEach(u),this.h();},h(){g(o,"fill","#FFD983"),g(o,"cx","18"),g(o,"cy","18"),g(o,"r","18"),g(s,"fill","#66757F"),g(s,"d","M0 18c0 9.941 8.059 18 18 18 .295 0 .58-.029.87-.043C24.761 33.393 29\n    26.332 29 18 29 9.669 24.761 2.607 18.87.044 18.58.03 18.295 0 18 0 8.059 0\n    0 8.059 0 18z"),g(l,"fill","#5B6876"),g(l,"cx","10.5"),g(l,"cy","8.5"),g(l,"r","3.5"),g(h,"fill","#5B6876"),g(h,"cx","20"),g(h,"cy","16"),g(h,"r","3"),g(d,"fill","#5B6876"),g(d,"cx","21.5"),g(d,"cy","27.5"),g(d,"r","3.5"),g(b,"fill","#5B6876"),g(b,"cx","21"),g(b,"cy","6"),g(b,"r","2"),g(v,"fill","#5B6876"),g(v,"cx","3"),g(v,"cy","18"),g(v,"r","1"),g(E,"fill","#FFCC4D"),g(E,"cx","30"),g(E,"cy","9"),g(E,"r","1"),g(_,"fill","#5B6876"),g(_,"cx","15"),g(_,"cy","31"),g(_,"r","1"),g(k,"fill","#FFCC4D"),g(k,"cx","32"),g(k,"cy","19"),g(k,"r","2"),g(B,"fill","#5B6876"),g(B,"cx","10"),g(B,"cy","23"),g(B,"r","2"),w(r,C);},m(t,e){f(t,r,e),a(r,n),a(n,i),a(r,o),a(r,s),a(r,l),a(r,h),a(r,d),a(r,b),a(r,v),a(r,E),a(r,_),a(r,k),a(r,B);},p(t,[e]){w(r,z(M,[{xmlns:"http://www.w3.org/2000/svg"},{viewBox:"0 0 36 36"},1&e&&t[0]]));},i:e,o:e,d(t){t&&u(r);}}}function ot(t,e,r){return t.$set=t=>{r(0,e=c(c({},e),h(t)));},[e=h(e)]}class st extends J{constructor(t){super(),G(this,t,ot,it,s,{});}}function lt(t){let e;const c=new nt({props:{width:t[1],height:t[1]}});return {c(){I(c.$$.fragment);},m(t,r){P(c,t,r),e=!0;},p(t,e){const r={};2&e&&(r.width=t[1]),2&e&&(r.height=t[1]),c.$set(r);},i(t){e||(T(c.$$.fragment,t),e=!0);},o(t){H(c.$$.fragment,t),e=!1;},d(t){R(c,t);}}}function ht(t){let e;const c=new st({props:{width:t[1],height:t[1]}});return {c(){I(c.$$.fragment);},m(t,r){P(c,t,r),e=!0;},p(t,e){const r={};2&e&&(r.width=t[1]),2&e&&(r.height=t[1]),c.$set(r);},i(t){e||(T(c.$$.fragment,t),e=!0);},o(t){H(c.$$.fragment,t),e=!1;},d(t){R(c,t);}}}function at(t){let c,r,n,o,s,l,h;const m=[ht,lt],p=[];function w(t,e){return t[0]?0:1}return n=w(t),o=p[n]=m[n](t),{c(){c=d("button"),r=d("span"),o.c(),this.c=e,g(r,"class","theme-switcher__state"),g(c,"class",s="theme-switcher "+t[2].join(" ")),g(c,"aria-label","Switch theme"),g(c,"style",t[3]);},m(t,e,i){var o,s,u,d;f(t,c,e),a(c,r),p[n].m(r,null),l=!0,i&&h(),s="click",u=et,(o=c).addEventListener(s,u,d),h=()=>o.removeEventListener(s,u,d);},p(t,[e]){let h=n;n=w(t),n===h?p[n].p(t,e):(N={r:0,c:[],p:N},H(p[h],1,1,()=>{p[h]=null;}),N.r||i(N.c),N=N.p,o=p[n],o||(o=p[n]=m[n](t),o.c()),T(o,1),o.m(r,null)),(!l||4&e&&s!==(s="theme-switcher "+t[2].join(" ")))&&g(c,"class",s),(!l||8&e)&&g(c,"style",t[3]);},i(t){l||(T(o),l=!0);},o(t){H(o),l=!1;},d(t){t&&u(c),p[n].d(),h();}}}function ft(t,e,c){let r;l(t,tt,t=>c(5,r=t));let n,i,o,s,h,{options:a=K}=e;return t.$set=t=>{"options"in t&&c(4,a=t.options);},t.$$.update=()=>{32&t.$$.dirty&&c(0,n=r===W),16&t.$$.dirty&&c(6,o={...K,...a}),64&t.$$.dirty&&c(1,i=Number(String(o.height).split("px").shift())),65&t.$$.dirty&&c(2,s=[...[o.classList].flat(),n?"theme-switcher__state--dark":"theme-switcher__state--light"]),64&t.$$.dirty&&c(3,h=U(o));},[n,i,s,h,a]}class ut extends O{constructor(t){super(),this.shadowRoot.innerHTML="<style>:global(:root){--theme-switcher-background-light:#ecf0f1;--theme-switcher-background-dark:#333;--theme-switcher-transition:0.6s;--theme-switcher-height:30px;--theme-switcher-width:60px;--theme-switcher-border-radius:calc(var(--theme-switcher-width) / 2);--theme-switcher-offset:calc(var(--theme-switcher-height) / 30)}.theme-switcher{border:0;overflow:hidden;position:relative;width:var(--theme-switcher-width);min-width:var(--theme-switcher-height);height:var(--theme-switcher-height);border-radius:var(--theme-switcher-border-radius)}.theme-switcher__state{top:0;line-height:1;position:absolute;height:var(--theme-switcher-height);transition:left var(--theme-switcher-transition);width:calc(\n      var(--theme-switcher-height) - calc(var(--theme-switcher-offset) * 4)\n    );font-size:calc(\n      var(--theme-switcher-height) + var(--theme-switcher-offset)\n    )}.theme-switcher__state--dark{background-color:var(--theme-switcher-background-dark)}.theme-switcher__state--light{background-color:var(--theme-switcher-background-light)}.theme-switcher__state--light>.theme-switcher__state{left:calc(\n      100% - calc(var(--theme-switcher-height) - var(--theme-switcher-offset))\n    )}.theme-switcher__state--dark>.theme-switcher__state{left:0}</style>",G(this,{target:this.shadowRoot},ft,at,s,{options:4}),t&&(t.target&&f(t.target,this,t.anchor),t.props&&(this.$set(t.props),j()));}static get observedAttributes(){return ["options"]}get options(){return this.$$.ctx[4]}set options(t){this.$set({options:t}),j();}}customElements.define("theme-switcher",ut),t.default=ut,t.theme=tt,Object.defineProperty(t,"__esModule",{value:!0});}));
-    });
-
-    unwrapExports(wc);
-
     const DEFAULT_OPTIONS = {
       classList: [],
       height: "30px"
@@ -568,9 +552,12 @@ var app = (function () {
     const MATCH_DARK_THEME = "(prefers-color-scheme: dark)";
 
     const IS_USER_PREFERNCE_DARK =
-      window.matchMedia && window.matchMedia(MATCH_DARK_THEME).matches;
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia(MATCH_DARK_THEME).matches;
 
-    const STORED = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const STORED =
+      typeof window !== "undefined" && localStorage.getItem(LOCAL_STORAGE_KEY);
 
     const DEFAULT_THEME = STORED
       ? STORED
@@ -592,18 +579,31 @@ var app = (function () {
       theme.set(newTheme);
     }
 
+    function onChange(theme) {
+      document.body.classList.remove(
+        `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
+      );
+      document.body.classList.add(`theme-${theme}`);
+      localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+    }
+
+    document.addEventListener("DOMContentLoaded", function listener() {
+      onChange(DEFAULT_THEME);
+      document.removeEventListener("DOMContentLoaded", listener);
+    });
+
     if (typeof window !== "undefined") {
       window.matchMedia &&
-        window
-          .matchMedia(MATCH_DARK_THEME)
-          .addEventListener("change", onSystemThemeChange, true);
+        window.matchMedia(MATCH_DARK_THEME).addListener(onSystemThemeChange);
 
       theme.subscribe((theme) => {
-        document.body.classList.remove(
-          `theme-${theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK}`
-        );
-        document.body.classList.add(`theme-${theme}`);
-        localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+        const ready =
+          document.readyState == "complete" ||
+          document.readyState === "interactive";
+
+        if (ready) {
+          onChange(theme);
+        }
       });
     }
 
@@ -942,7 +942,7 @@ var app = (function () {
     /* src/ThemeSwitcher.svelte generated by Svelte v3.20.1 */
     const file = "src/ThemeSwitcher.svelte";
 
-    // (96:4) {:else}
+    // (105:4) {:else}
     function create_else_block(ctx) {
     	let current;
 
@@ -986,14 +986,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(96:4) {:else}",
+    		source: "(105:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:4) {#if isDarkMode}
+    // (103:4) {#if isDarkMode}
     function create_if_block(ctx) {
     	let current;
 
@@ -1037,7 +1037,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(94:4) {#if isDarkMode}",
+    		source: "(103:4) {#if isDarkMode}",
     		ctx
     	});
 
@@ -1068,12 +1068,12 @@ var app = (function () {
     			button = element("button");
     			span = element("span");
     			if_block.c();
-    			attr_dev(span, "class", "theme-switcher__state svelte-38g5hk");
-    			add_location(span, file, 92, 2, 2261);
-    			attr_dev(button, "class", button_class_value = "theme-switcher " + /*classes*/ ctx[2].join(" ") + " svelte-38g5hk");
+    			attr_dev(span, "class", "theme-switcher__state svelte-17stncj");
+    			add_location(span, file, 101, 2, 2599);
+    			attr_dev(button, "class", button_class_value = "theme-switcher " + /*classes*/ ctx[2].join(" ") + " svelte-17stncj");
     			attr_dev(button, "aria-label", "Switch theme");
     			attr_dev(button, "style", /*style*/ ctx[3]);
-    			add_location(button, file, 87, 0, 2142);
+    			add_location(button, file, 96, 0, 2480);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1111,7 +1111,7 @@ var app = (function () {
     				if_block.m(span, null);
     			}
 
-    			if (!current || dirty & /*classes*/ 4 && button_class_value !== (button_class_value = "theme-switcher " + /*classes*/ ctx[2].join(" ") + " svelte-38g5hk")) {
+    			if (!current || dirty & /*classes*/ 4 && button_class_value !== (button_class_value = "theme-switcher " + /*classes*/ ctx[2].join(" ") + " svelte-17stncj")) {
     				attr_dev(button, "class", button_class_value);
     			}
 
@@ -1281,28 +1281,32 @@ var app = (function () {
     	let t14;
     	let li4;
     	let t16;
-    	let p;
-    	let t18;
-    	let ul2;
     	let li5;
+    	let t17;
+    	let a2;
+    	let t19;
+    	let p;
+    	let t21;
+    	let ul2;
+    	let li6;
     	let span0;
-    	let t20;
+    	let t23;
     	let pre0;
     	let code0;
-    	let t22;
-    	let t23;
-    	let li6;
-    	let span1;
     	let t25;
+    	let t26;
+    	let li7;
+    	let span1;
+    	let t28;
     	let pre1;
     	let code1;
-    	let t27;
-    	let t28;
-    	let h21;
     	let t30;
+    	let t31;
+    	let h21;
+    	let t33;
     	let pre2;
     	let code2;
-    	let t32;
+    	let t35;
     	let pre3;
     	let code3;
     	let current;
@@ -1342,95 +1346,105 @@ var app = (function () {
     			li4 = element("li");
     			li4.textContent = "You get a lovely happy switch button";
     			t16 = space();
+    			li5 = element("li");
+    			t17 = text("Can be used as a web component\n      ");
+    			a2 = element("a");
+    			a2.textContent = "demo here";
+    			t19 = space();
     			p = element("p");
     			p.textContent = "Fancy stuff, you should open up your OS settings and see this site react to\n    your preferences.";
-    			t18 = space();
+    			t21 = space();
     			ul2 = element("ul");
-    			li5 = element("li");
+    			li6 = element("li");
     			span0 = element("span");
     			span0.textContent = "Mac OS:";
-    			t20 = space();
+    			t23 = space();
     			pre0 = element("pre");
     			code0 = element("code");
     			code0.textContent = "Preferences > General > Appearance.";
-    			t22 = text("\n      Then select your theme");
-    			t23 = space();
-    			li6 = element("li");
+    			t25 = text("\n      Then select your theme");
+    			t26 = space();
+    			li7 = element("li");
     			span1 = element("span");
     			span1.textContent = "Windows 10:";
-    			t25 = space();
+    			t28 = space();
     			pre1 = element("pre");
     			code1 = element("code");
     			code1.textContent = "Settings > Personalization > Colors.";
-    			t27 = text("\n      Then scroll down under Choose your mode and select Dark.");
-    			t28 = space();
+    			t30 = text("\n      Then scroll down under Choose your mode and select Dark.");
+    			t31 = space();
     			h21 = element("h2");
     			h21.textContent = "Try it out";
-    			t30 = space();
+    			t33 = space();
     			pre2 = element("pre");
     			code2 = element("code");
     			code2.textContent = "$ npm i svelte-theme-switcher";
-    			t32 = space();
+    			t35 = space();
     			pre3 = element("pre");
     			code3 = element("code");
     			code3.textContent = "$ yarn add svelte-theme-switcher";
-    			attr_dev(a0, "class", "github-button");
+    			attr_dev(a0, "class", "github-button svelte-32xdr0");
     			attr_dev(a0, "href", "https://github.com/dev-warner");
     			attr_dev(a0, "data-color-scheme", "no-preference: light; light: light; dark: dark;");
     			attr_dev(a0, "data-size", "large");
     			attr_dev(a0, "aria-label", "Follow @dev-warner on GitHub");
-    			add_location(a0, file$1, 67, 8, 983);
-    			attr_dev(li0, "class", "header__link svelte-b8h8le");
-    			add_location(li0, file$1, 66, 6, 949);
-    			attr_dev(a1, "class", "github-button");
+    			add_location(a0, file$1, 68, 8, 986);
+    			attr_dev(li0, "class", "header__link svelte-32xdr0");
+    			add_location(li0, file$1, 67, 6, 952);
+    			attr_dev(a1, "class", "github-button svelte-32xdr0");
     			attr_dev(a1, "href", "https://github.com/dev-warner/svelte-theme-switcher");
     			attr_dev(a1, "data-color-scheme", "no-preference: dark;");
     			attr_dev(a1, "data-icon", "octicon-star");
     			attr_dev(a1, "data-size", "large");
     			attr_dev(a1, "aria-label", "Star dev-warner/svelte-theme-switcher on GitHub");
-    			add_location(a1, file$1, 77, 8, 1318);
-    			attr_dev(li1, "class", "header__link svelte-b8h8le");
-    			add_location(li1, file$1, 76, 6, 1284);
-    			attr_dev(ul0, "class", "header__links svelte-b8h8le");
-    			add_location(ul0, file$1, 65, 4, 916);
-    			attr_dev(header, "class", "header svelte-b8h8le");
-    			add_location(header, file$1, 63, 2, 866);
-    			add_location(b, file$1, 92, 4, 1700);
-    			add_location(h1, file$1, 90, 2, 1673);
-    			add_location(h20, file$1, 96, 2, 1747);
-    			attr_dev(li2, "class", "svelte-b8h8le");
-    			add_location(li2, file$1, 99, 4, 1777);
-    			attr_dev(li3, "class", "svelte-b8h8le");
-    			add_location(li3, file$1, 100, 4, 1815);
-    			attr_dev(li4, "class", "svelte-b8h8le");
-    			add_location(li4, file$1, 101, 4, 1861);
-    			attr_dev(ul1, "class", "svelte-b8h8le");
-    			add_location(ul1, file$1, 98, 2, 1768);
-    			attr_dev(p, "class", "svelte-b8h8le");
-    			add_location(p, file$1, 104, 2, 1918);
-    			add_location(span0, file$1, 111, 6, 2054);
-    			attr_dev(code0, "class", "svelte-b8h8le");
-    			add_location(code0, file$1, 113, 8, 2095);
-    			add_location(pre0, file$1, 112, 6, 2081);
-    			attr_dev(li5, "class", "svelte-b8h8le");
-    			add_location(li5, file$1, 110, 4, 2043);
-    			add_location(span1, file$1, 118, 6, 2211);
-    			attr_dev(code1, "class", "svelte-b8h8le");
-    			add_location(code1, file$1, 120, 8, 2256);
-    			add_location(pre1, file$1, 119, 6, 2242);
-    			attr_dev(li6, "class", "svelte-b8h8le");
-    			add_location(li6, file$1, 117, 4, 2200);
-    			attr_dev(ul2, "class", "svelte-b8h8le");
-    			add_location(ul2, file$1, 109, 2, 2034);
-    			add_location(h21, file$1, 126, 2, 2403);
-    			attr_dev(code2, "class", "svelte-b8h8le");
-    			add_location(code2, file$1, 129, 4, 2436);
-    			add_location(pre2, file$1, 128, 2, 2426);
-    			attr_dev(code3, "class", "svelte-b8h8le");
-    			add_location(code3, file$1, 133, 4, 2501);
-    			add_location(pre3, file$1, 132, 2, 2491);
-    			attr_dev(section, "class", "container svelte-b8h8le");
-    			add_location(section, file$1, 62, 0, 836);
+    			add_location(a1, file$1, 78, 8, 1321);
+    			attr_dev(li1, "class", "header__link svelte-32xdr0");
+    			add_location(li1, file$1, 77, 6, 1287);
+    			attr_dev(ul0, "class", "header__links svelte-32xdr0");
+    			add_location(ul0, file$1, 66, 4, 919);
+    			attr_dev(header, "class", "header svelte-32xdr0");
+    			add_location(header, file$1, 64, 2, 869);
+    			add_location(b, file$1, 93, 4, 1703);
+    			add_location(h1, file$1, 91, 2, 1676);
+    			add_location(h20, file$1, 97, 2, 1750);
+    			attr_dev(li2, "class", "svelte-32xdr0");
+    			add_location(li2, file$1, 100, 4, 1780);
+    			attr_dev(li3, "class", "svelte-32xdr0");
+    			add_location(li3, file$1, 101, 4, 1818);
+    			attr_dev(li4, "class", "svelte-32xdr0");
+    			add_location(li4, file$1, 102, 4, 1864);
+    			attr_dev(a2, "href", "/web-components");
+    			attr_dev(a2, "class", "svelte-32xdr0");
+    			add_location(a2, file$1, 105, 6, 1962);
+    			attr_dev(li5, "class", "svelte-32xdr0");
+    			add_location(li5, file$1, 103, 4, 1914);
+    			attr_dev(ul1, "class", "svelte-32xdr0");
+    			add_location(ul1, file$1, 99, 2, 1771);
+    			attr_dev(p, "class", "svelte-32xdr0");
+    			add_location(p, file$1, 109, 2, 2023);
+    			add_location(span0, file$1, 116, 6, 2159);
+    			attr_dev(code0, "class", "svelte-32xdr0");
+    			add_location(code0, file$1, 118, 8, 2200);
+    			add_location(pre0, file$1, 117, 6, 2186);
+    			attr_dev(li6, "class", "svelte-32xdr0");
+    			add_location(li6, file$1, 115, 4, 2148);
+    			add_location(span1, file$1, 123, 6, 2316);
+    			attr_dev(code1, "class", "svelte-32xdr0");
+    			add_location(code1, file$1, 125, 8, 2361);
+    			add_location(pre1, file$1, 124, 6, 2347);
+    			attr_dev(li7, "class", "svelte-32xdr0");
+    			add_location(li7, file$1, 122, 4, 2305);
+    			attr_dev(ul2, "class", "svelte-32xdr0");
+    			add_location(ul2, file$1, 114, 2, 2139);
+    			add_location(h21, file$1, 131, 2, 2508);
+    			attr_dev(code2, "class", "svelte-32xdr0");
+    			add_location(code2, file$1, 134, 4, 2541);
+    			add_location(pre2, file$1, 133, 2, 2531);
+    			attr_dev(code3, "class", "svelte-32xdr0");
+    			add_location(code3, file$1, 138, 4, 2606);
+    			add_location(pre3, file$1, 137, 2, 2596);
+    			attr_dev(section, "class", "container svelte-32xdr0");
+    			add_location(section, file$1, 63, 0, 839);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1461,29 +1475,33 @@ var app = (function () {
     			append_dev(ul1, li3);
     			append_dev(ul1, t14);
     			append_dev(ul1, li4);
-    			append_dev(section, t16);
+    			append_dev(ul1, t16);
+    			append_dev(ul1, li5);
+    			append_dev(li5, t17);
+    			append_dev(li5, a2);
+    			append_dev(section, t19);
     			append_dev(section, p);
-    			append_dev(section, t18);
+    			append_dev(section, t21);
     			append_dev(section, ul2);
-    			append_dev(ul2, li5);
-    			append_dev(li5, span0);
-    			append_dev(li5, t20);
-    			append_dev(li5, pre0);
-    			append_dev(pre0, code0);
-    			append_dev(li5, t22);
-    			append_dev(ul2, t23);
     			append_dev(ul2, li6);
-    			append_dev(li6, span1);
+    			append_dev(li6, span0);
+    			append_dev(li6, t23);
+    			append_dev(li6, pre0);
+    			append_dev(pre0, code0);
     			append_dev(li6, t25);
-    			append_dev(li6, pre1);
+    			append_dev(ul2, t26);
+    			append_dev(ul2, li7);
+    			append_dev(li7, span1);
+    			append_dev(li7, t28);
+    			append_dev(li7, pre1);
     			append_dev(pre1, code1);
-    			append_dev(li6, t27);
-    			append_dev(section, t28);
+    			append_dev(li7, t30);
+    			append_dev(section, t31);
     			append_dev(section, h21);
-    			append_dev(section, t30);
+    			append_dev(section, t33);
     			append_dev(section, pre2);
     			append_dev(pre2, code2);
-    			append_dev(section, t32);
+    			append_dev(section, t35);
     			append_dev(section, pre3);
     			append_dev(pre3, code3);
     			current = true;
